@@ -112,7 +112,7 @@
   },
   "include": [
     "index.ts",
-    "scripts/applyCircleCheckboxAppearance.ts",
+    "src/utils/applyCircleCheckboxAppearance.ts",
     // or if you have a src folder: "src/**/*"
   ]
 }

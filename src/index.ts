@@ -1,4 +1,4 @@
-import { applyCircleCheckboxAppearance } from './scripts/applyCircleCheckboxAppearance';
+import { applyCircleCheckboxAppearance } from './utils/applyCircleCheckboxAppearance';
 
 applyCircleCheckboxAppearance(name => name.startsWith('dot-'));
 
@@ -18,7 +18,7 @@ const fontSize = 8;
 
 async function createEditablePDF() {
   // Load static PDF
-  const existingPdfBytes = fs.readFileSync('./wod-character-sheet.pdf');
+  const existingPdfBytes = fs.readFileSync('./input/wod-character-sheet.pdf');
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
   // Embed the font
@@ -769,7 +769,7 @@ async function createEditablePDF() {
 
   // Save the modified PDF
   const pdfBytesEdited = await pdfDoc.save();
-  fs.writeFileSync('./wod-interactive-character-sheet.pdf', pdfBytesEdited);
+  fs.writeFileSync('./output/wod-interactive-character-sheet.pdf', pdfBytesEdited);
   console.log('PDF edited successfully and saved as wod-interactive-character-sheet.pdf');
 }
 

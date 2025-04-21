@@ -3,7 +3,7 @@ import fs from 'fs';
 
 async function addGridOverlay() {
   // Load your existing PDF
-  const existingPdfBytes = fs.readFileSync('./wod-character-sheet.pdf');
+  const existingPdfBytes = fs.readFileSync('./input/wod-character-sheet.pdf');
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
   // Get the first page (adjust if necessary)
@@ -56,7 +56,7 @@ async function addGridOverlay() {
 
   // Save the modified PDF with grid overlay
   const modifiedPdfBytes = await pdfDoc.save();
-  fs.writeFileSync('./Wip_Sheet_With_Grid.pdf', modifiedPdfBytes);
+  fs.writeFileSync('./output/Wip_Sheet_With_Grid.pdf', modifiedPdfBytes);
   console.log('PDF with grid overlay saved as Wip_Sheet_With_Grid.pdf');
 }
 
